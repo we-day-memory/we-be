@@ -17,11 +17,9 @@ class GoogleDriveService:
         credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
         if not credentials_json:
             raise ValueError("Environment variable GOOGLE_APPLICATION_CREDENTIALS_JSON is not set.")
-        print(f"JSON: {credentials_json}")
-        # Parse JSON credentials
-        credentials_info = json.loads(credentials_json)
 
-        creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_info, self._SCOPES)
+
+        creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_json, self._SCOPES)
         service = build('drive', 'v3', credentials=creds)
 
         return service
