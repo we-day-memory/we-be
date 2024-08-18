@@ -100,7 +100,9 @@ async def upload_photos(
     
 
 @app.get('/gdrive-files')
-def getFileListFromGDrive():
+def getFileListFromGDrive(
+    token: dict = Depends(verify_token)
+):
     selected_fields="files(id,name,webViewLink)"
     g_drive_service=GoogleDriveService().build()
     list_file=g_drive_service.files().list(fields=selected_fields).execute()
