@@ -55,7 +55,6 @@ async def upload_photos(
     files: List[UploadFile] = File(...),
     token: dict = Depends(verify_token)
 ):
-    time.sleep(10)
     # Extract user_id from the token payload
     user_id = token.get("user_id")
     if not user_id:
