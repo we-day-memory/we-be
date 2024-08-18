@@ -137,7 +137,7 @@ venv.bak/
 /uploads
 /app
 /.env.http
-
+/creds.json
 # Rope project settings
 .ropeproject
 
