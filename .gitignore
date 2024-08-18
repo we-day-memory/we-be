@@ -138,8 +138,6 @@ venv.bak/
 /app
 /.env.http
 
-/credentials.json
-
 # Rope project settings
 .ropeproject
 
