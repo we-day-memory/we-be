@@ -2,7 +2,7 @@ import json
 import os
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
-
+from google.oauth2.service_account import Credentials
 
 class GoogleDriveService:
     def __init__(self):
@@ -17,9 +17,14 @@ class GoogleDriveService:
         credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
         if not credentials_json:
             raise ValueError("Environment variable GOOGLE_APPLICATION_CREDENTIALS_JSON is not set.")
+ 
+        # Parse JSON credentials
+        credentials_info = json.loads(credentials_json)
 
+        # Create credentials object
+        creds = Credentials.from_service_account_info(credentials_info, scopes=self._SCOPES)
 
-        creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_json, self._SCOPES)
+        # Build the Drive service
         service = build('drive', 'v3', credentials=creds)
 
         return service
