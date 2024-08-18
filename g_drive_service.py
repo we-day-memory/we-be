@@ -17,7 +17,7 @@ class GoogleDriveService:
         credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
         if not credentials_json:
             raise ValueError("Environment variable GOOGLE_APPLICATION_CREDENTIALS_JSON is not set.")
-
+        print(f"JSON: {credentials_json}")
         # Parse JSON credentials
         credentials_info = json.loads(credentials_json)
 
