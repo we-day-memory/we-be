@@ -3,7 +3,7 @@ import time
 import jwt
 
 from io import BytesIO
-from backend.g_drive_service import GoogleDriveService
+from g_drive_service import GoogleDriveService
 from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, status
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
