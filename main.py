@@ -28,7 +28,7 @@ app.add_middleware(
 
 service=GoogleDriveService().build()
 
-ROOT_FOLDER_ID = f'{os.getenv("FOLDER_ID")}'
+ROOT_FOLDER_ID = f'{os.getenv("FOLDER_ID_DD")}'
 
 def get_key():
     file_path = "./secret.key"  # Path to the file on the server
