@@ -14,7 +14,7 @@ class GoogleDriveService:
 
     def build(self):
         # Load credentials from environment variable
-        credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+        credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON_DD")
         if not credentials_json:
             raise ValueError("Environment variable GOOGLE_APPLICATION_CREDENTIALS_JSON is not set.")
  
